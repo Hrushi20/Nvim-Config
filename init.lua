@@ -1,0 +1,6 @@
+require("hrushi20.plugins-setup")
+require("hrushi20.core.options")
+require("hrushi20.core.keymaps")
+require("hrushi20.core.colorscheme")
+require("hrushi20.plugins.nvim-tree")
+require("hrushi20.plugins.lualine")
