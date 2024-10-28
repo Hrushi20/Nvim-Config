@@ -29,6 +29,13 @@ return require('packer').startup(function(use)
   use "nvim-lua/plenary.nvim"   -- Other plugins use this plugin
   use {'nvim-telescope/telescope.nvim', tag = '0.1.8'}
     
+
+  use {
+    "williamboman/mason.nvim", -- Installing and managing LSP
+    "williamboman/mason-lspconfig.nvim", -- Bridging LSPConfig to Mason
+    "neovim/nvim-lspconfig"   -- Configuring LSP Server
+  }
+
 end)
 
 
