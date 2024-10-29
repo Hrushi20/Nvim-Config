@@ -28,3 +28,9 @@ opt.backspace = "indent,eol,start"
 opt.splitright = true
 opt.splitbelow = true
 
+-- Incrmental search
+vim.opt.hlsearch = false 
+vim.opt.incsearch = true 
+
+-- Auto scoll
+vim.opt.scrolloff = 8

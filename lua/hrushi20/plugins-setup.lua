@@ -29,11 +29,28 @@ return require('packer').startup(function(use)
   use "nvim-lua/plenary.nvim"   -- Other plugins use this plugin
   use {'nvim-telescope/telescope.nvim', tag = '0.1.8'}
     
+  use "tpope/vim-fugitive" -- Git workflows
 
+  -- LSP Configuration with Auto completion
   use {
-    "williamboman/mason.nvim", -- Installing and managing LSP
-    "williamboman/mason-lspconfig.nvim", -- Bridging LSPConfig to Mason
-    "neovim/nvim-lspconfig"   -- Configuring LSP Server
+	  'VonHeikemen/lsp-zero.nvim',
+	  branch = 'v1.x',
+	  requires = {
+		  -- LSP Support
+		  {'neovim/nvim-lspconfig'},
+		  {'williamboman/mason.nvim'},
+		  {'williamboman/mason-lspconfig.nvim'},
+		  -- Autocompletion
+		  {'hrsh7th/nvim-cmp'},
+		  {'hrsh7th/cmp-buffer'},
+		  {'hrsh7th/cmp-path'},
+		  {'saadparwaiz1/cmp_luasnip'},
+		  {'hrsh7th/cmp-nvim-lsp'},
+		  {'hrsh7th/cmp-nvim-lua'},
+		  -- Snippets
+		  {'L3MON4D3/LuaSnip'},
+		  {'rafamadriz/friendly-snippets'},
+	  }
   }
 
 end)
