@@ -169,6 +169,11 @@ _G.packer_plugins = {
     path = "/Users/pc/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/Users/pc/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/pc/.local/share/nvim/site/pack/packer/start/vim-fugitive",

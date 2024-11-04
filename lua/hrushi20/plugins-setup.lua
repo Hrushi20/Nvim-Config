@@ -24,13 +24,12 @@ return require('packer').startup(function(use)
 
   use 'nvim-lualine/lualine.nvim' -- Status line at bottom of vim editor 
 
-  use 'nvim-lualine/lualine.nvim' -- Status line at bottom of vim editor 
-
   use "nvim-lua/plenary.nvim"   -- Other plugins use this plugin
   use {'nvim-telescope/telescope.nvim', tag = '0.1.8'}
     
   use "tpope/vim-fugitive" -- Git workflows
 
+  use "folke/trouble.nvim" -- Error diagnostic
   -- LSP Configuration with Auto completion
   use {
 	  'VonHeikemen/lsp-zero.nvim',
