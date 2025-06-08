@@ -1,18 +1,33 @@
-local lsp = require("lsp-zero")
-local diagnostics = require("trouble")
+local lsp_zero = require('lsp-zero')
 
-lsp.preset('recommended')
-lsp.setup({
-  "rust_analyzer",
-  "jdtls",
-  "eslint"
+-- Set recommended preset manually (since 'preset' is removed in v3)
+lsp_zero.on_attach(function(client, bufnr)
+end)
+
+-- Optional: set default preferences
+lsp_zero.set_preferences({
+  suggest_lsp_servers = true,
+  sign_icons = {
+    error = "✘",
+    warn = "▲",
+    hint = "⚑",
+    info = "»"
+  }
 })
 
-diagnostics.setup()
+-- Set up LSP servers
+require('lspconfig').rust_analyzer.setup({})
+require('lspconfig').jdtls.setup({})
+require('lspconfig').eslint.setup({})
 
+-- Trouble.nvim for diagnostics
+require("trouble").setup()
+
+-- Custom diagnostic UI
 vim.diagnostic.config({
   virtual_text = {
-    prefix = "●",  -- Choose a symbol you like, or use an emoji like "🔥"
+    prefix = "●",
     spacing = 2,
   },
 })
+

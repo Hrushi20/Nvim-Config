@@ -13,7 +13,7 @@ vim.cmd [[
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  use 'rose-pine/neovim'
+  use {'rose-pine/neovim', as = 'rose-pine'}
 
 
   use 'tpope/vim-surround'
@@ -30,6 +30,8 @@ return require('packer').startup(function(use)
   use "tpope/vim-fugitive" -- Git workflows
 
   use "folke/trouble.nvim" -- Error diagnostic
+
+  use("numToStr/Comment.nvim") -- Comment
   -- LSP Configuration with Auto completion
   use {
 	  'VonHeikemen/lsp-zero.nvim',

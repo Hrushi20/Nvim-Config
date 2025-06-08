@@ -34,3 +34,6 @@ vim.opt.incsearch = true
 
 -- Auto scoll
 vim.opt.scrolloff = 8
+
+-- Sync Clipboard
+vim.opt.clipboard = "unnamedplus"
