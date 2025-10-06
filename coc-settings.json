@@ -1,0 +1,7 @@
+{
+  "diagnostic.virtualText": true,
+  "diagnostic.enable": true,
+  "suggest.enablePreview": true,
+  "coc.preferences.useQuickfixForLocations": true,
+  "coc.preferences.formatOnSaveFiletypes": ["c", "cpp", "java", "rust", "python"]
+}

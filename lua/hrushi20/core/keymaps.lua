@@ -20,5 +20,5 @@ vim.api.nvim_set_keymap("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=fa
 vim.api.nvim_set_keymap("n", "<leader>cl", "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", {silent = true, noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc = 'Location List (Trouble)' })
 vim.api.nvim_set_keymap("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", { desc = 'Quickfix List (Trouble)' })
-
+vim.api.nvim_set_keymap("n", "<leader>xe", "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true, desc = "Show diagnostics in float" })
 
