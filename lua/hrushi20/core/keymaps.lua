@@ -22,3 +22,6 @@ vim.api.nvim_set_keymap("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { 
 vim.api.nvim_set_keymap("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", { desc = 'Quickfix List (Trouble)' })
 vim.api.nvim_set_keymap("n", "<leader>xe", "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true, desc = "Show diagnostics in float" })
 
+-- COC Tagging
+vim.keymap.set("n", "<C-]>", "<Plug>(coc-definition)", { silent = true })
+
