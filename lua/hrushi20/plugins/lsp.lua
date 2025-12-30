@@ -10,6 +10,8 @@ return {
         "neovim/nvim-lspconfig",
     },
   },
+
+  -- For Autocompletion
   {
     'hrsh7th/nvim-cmp',
     dependencies = {
@@ -26,6 +28,12 @@ return {
         }),
         sources = {
           { name = "nvim_lsp" },
+        },
+
+
+        -- Enable documentation window
+        window = {
+          documentation = cmp.config.window.bordered(),
         },
       })
     end,
