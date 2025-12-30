@@ -5,7 +5,8 @@ local keymap = vim.keymap
 -- general keymaps
 
 -- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>")
+keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>")
+keymap.set("n", "<leader>e", ":NvimTreeFindFile<CR>")
 
 -- telescope 
 local builtin = require('telescope.builtin')

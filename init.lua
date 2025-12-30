@@ -1,7 +1,3 @@
 require("hrushi20.lazy")
 require("hrushi20.core.options")
 require("hrushi20.core.keymaps")
--- require("hrushi20.plugins.nvim-tree")
--- require("hrushi20.plugins.lualine")
--- require("hrushi20.plugins.lsp.lsp")
--- require("hrushi20.plugins.comment")
