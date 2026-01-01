@@ -1,19 +1,21 @@
 return {
   {
-    "mason-org/mason-lspconfig.nvim",
-    opts = {},
+    "neovim/nvim-lspconfig",
     dependencies = {
         { 
           "mason-org/mason.nvim", 
+          opts = {}
+        },
+        {
+          "mason-org/mason-lspconfig.nvim",
           opts = {
             ensure_installed = {
               "clangd",
               "lua_ls",
-              "rust_analyzer"
+              "rust_analyzer",
             }
-          } 
-        },
-        "neovim/nvim-lspconfig",
+          }
+        }
     },
   },
 
