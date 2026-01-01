@@ -5,7 +5,13 @@ return {
     dependencies = {
         { 
           "mason-org/mason.nvim", 
-          opts = {} 
+          opts = {
+            ensure_installed = {
+              "clangd",
+              "lua_ls",
+              "rust_analyzer"
+            }
+          } 
         },
         "neovim/nvim-lspconfig",
     },
