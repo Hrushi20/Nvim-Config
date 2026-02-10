@@ -4,6 +4,11 @@ local keymap = vim.keymap
 
 -- general keymaps
 
+keymap.set('n', 'H', ':bprevious<CR>', { desc = 'Previous buffer' })
+keymap.set('n', 'L', ':bnext<CR>', { desc = 'Next buffer' })
+keymap.set('n', '<leader>bb', ':Telescope buffers<CR>', { desc = 'Browse buffers' })
+keymap.set('n', '<leader>bd', ':bdelete<CR>', { desc = 'Delete buffer' })
+
 
 -- Use Tabs to navigate Dropdown for autocomplete
 local cmp = require("cmp")
