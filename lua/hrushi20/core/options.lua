@@ -38,5 +38,7 @@ vim.opt.scrolloff = 8
 -- Sync Clipboard
 vim.opt.clipboard = "unnamedplus"
 
--- Set High Fold level
-vim.wo.foldlevel = 99   -- all folds open by default
+-- Fold settings (global)
+opt.foldmethod = "expr"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.foldlevel = 99

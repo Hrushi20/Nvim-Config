@@ -3,9 +3,8 @@ return {
   build = ":TSUpdate",
   branch = "main",
   event = { "BufReadPre", "BufNewFile" },
-  config = function()
-    local treesitter = require('nvim-treesitter')
-    treesitter.install({
+  opts = {
+    ensure_installed = {
       'c',
       'cpp',
       'java',
@@ -17,18 +16,8 @@ return {
       'json',
       'xml',
       'rust'
-    })
-
-    -- Folds
-    vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-    vim.wo.foldmethod = 'expr'
-
-    -- Highlighting
-    -- vim.api.nvim_create_autocmd('FileType', {
-    --   -- pattern = { '<filetype>' }, -- Can Configure per file FFtype
-    --   callback = function() vim.treesitter.start() end,
-    -- })
-    end,
+    },
+  },
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",

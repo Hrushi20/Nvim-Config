@@ -18,21 +18,14 @@ return {
         }
     },
 
-    --- Clang not support for aarch64. U
-    --- Install clang on the host and uncomment this for lsp support
+    config = function()
+      vim.lsp.enable("lua_ls")
+      vim.lsp.enable("rust_analyzer")
 
-    -- config = function()
-    --   vim.lsp.config("clangd", {
-    --     cmd = { "clangd" },
-    --     filetypes = { "c", "cpp", "objc", "objcpp" },
-    --     root_markers = {
-    --       "compile_commands.json",
-    --       "meson.build",
-    --       ".git",
-    --     },
-    --   })
-    --   vim.lsp.enable("clangd")
-    -- end,
+      if vim.fn.executable("clangd") == 1 then
+        vim.lsp.enable("clangd")
+      end
+    end,
   },
 
   -- For Autocompletion
