@@ -5,7 +5,6 @@ return {
     lazy = false,
     keys = {
       {'<leader>e',':NvimTreeToggle<CR>' , desc = "Toggle Explorer" },
-      {'<leader>o', ':NvimTreeFindFile<CR>', desc = "Find File in directory"},
       {'<leader>fe', ':NvimTreeFindFile<CR>', desc = "Focus Explorer On Current File"},
       {'<leader>E', ':NvimTreeCollapse<CR>:NvimTreeFocus<CR>', desc = "Collapse All And Focus Explorer"},
     },
