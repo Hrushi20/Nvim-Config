@@ -23,6 +23,12 @@ return {
       vim.lsp.enable("rust_analyzer")
 
       if vim.fn.executable("clangd") == 1 then
+        vim.lsp.config("clangd", {
+          cmd = {
+            "clangd",
+            "--query-driver=/nix/store/*/bin/clang,/nix/store/*/bin/clang++,/usr/bin/clang,/usr/bin/clang++",
+          },
+        })
         vim.lsp.enable("clangd")
       end
     end,
