@@ -13,6 +13,7 @@ return {
               "clangd",
               "lua_ls",
               "rust_analyzer",
+              "ts_ls",
             }
           }
         }
@@ -21,12 +22,13 @@ return {
     config = function()
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("rust_analyzer")
+      vim.lsp.enable("ts_ls")
 
       if vim.fn.executable("clangd") == 1 then
         vim.lsp.config("clangd", {
           cmd = {
             "clangd",
-            "--query-driver=/nix/store/*/bin/clang,/nix/store/*/bin/clang++,/usr/bin/clang,/usr/bin/clang++",
+            "--enable-config",
           },
         })
         vim.lsp.enable("clangd")

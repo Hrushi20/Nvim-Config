@@ -7,8 +7,6 @@ local keymap = vim.keymap
 -- Buffer Keymaps
 keymap.set('n', 'H', ':bprevious<CR>', { desc = 'Previous buffer' })
 keymap.set('n', 'L', ':bnext<CR>', { desc = 'Next buffer' })
-keymap.set('n', '<leader>bb', ':Telescope buffers<CR>', { desc = 'Browse buffers' })
-keymap.set('n', '<leader>bd', ':bdelete<CR>', { desc = 'Delete buffer' })
 keymap.set('n', '<leader><space>', ':Telescope buffers<CR>', { desc = 'Switch Buffers' })
 
 -- Resize windows
