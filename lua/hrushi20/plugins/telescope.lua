@@ -40,6 +40,12 @@ return {
           "filename_first",
         },
       },
+      pickers = {
+        live_grep = {
+          layout_strategy = "vertical",
+          show_line = false,
+        },
+      },
     },
     config = function(_, opts)
       local telescope = require("telescope")
