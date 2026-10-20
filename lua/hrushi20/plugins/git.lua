@@ -20,26 +20,29 @@ return {
             return "]h"
           end
           vim.schedule(function()
-            gs.next_hunk()
+            gs.nav_hunk("next", { target = "all" })
           end)
           return "<Ignore>"
-        end, "Next Hunk")
+        end, "Next Git Hunk (staged and unstaged)")
 
         map("n", "[h", function()
           if vim.wo.diff then
             return "[h"
           end
           vim.schedule(function()
-            gs.prev_hunk()
+            gs.nav_hunk("prev", { target = "all" })
           end)
           return "<Ignore>"
-        end, "Previous Hunk")
+        end, "Previous Git Hunk (staged and unstaged)")
 
-        map("n", "<leader>hs", gs.stage_hunk, "Stage Hunk")
+        map("n", "<leader>hs", gs.stage_hunk, "Stage / Unstage Hunk")
         map("n", "<leader>hr", gs.reset_hunk, "Reset Hunk")
         map("n", "<leader>hp", gs.preview_hunk, "Preview Hunk")
         map("n", "<leader>hS", gs.stage_buffer, "Stage Buffer")
-        map("n", "<leader>hu", gs.undo_stage_hunk, "Undo Stage Hunk")
+        -- Keep the familiar unstage key, but use the modern staged-sign action.
+        -- Gitsigns can reverse a staged hunk with stage_hunk; undo_stage_hunk only
+        -- reverses a stage_hunk call from this Neovim session.
+        map("n", "<leader>hu", gs.stage_hunk, "Unstage Hunk (on staged change)")
         map("n", "<leader>hb", function()
           gs.blame_line({ full = true })
         end, "Blame Line")
