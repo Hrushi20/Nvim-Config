@@ -35,8 +35,12 @@ return {
       },
     },
     opts = {
-      -- picker = {},
-      -- extensions = {},
+      defaults = {
+        path_display = {
+          "filename_first",
+          shorten = { len = 1, exclude = { -2, -1 } },
+        },
+      },
     },
     config = function(_, opts)
       local telescope = require("telescope")
