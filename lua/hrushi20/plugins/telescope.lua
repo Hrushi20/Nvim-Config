@@ -38,7 +38,6 @@ return {
       defaults = {
         path_display = {
           "filename_first",
-          shorten = { len = 1, exclude = { -2, -1 } },
         },
       },
     },
