@@ -1,23 +1,28 @@
 return {
-  { "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
-  branch = "main",
-  event = { "BufReadPre", "BufNewFile" },
-  opts = {
-    ensure_installed = {
-      'c',
-      'cpp',
-      'java',
-      'lua',
-      'javascript',
-      'python',
-      'vim',
-      'yaml',
-      'json',
-      'xml',
-      'rust'
-    },
-  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    -- The current main branch does not support lazy loading.
+    lazy = false,
+    build = ":TSUpdate",
+    config = function()
+      -- `ensure_installed` was removed from the current main branch API.
+      -- Install these parsers asynchronously when Neovim starts; already
+      -- installed parsers are skipped.
+      require("nvim-treesitter").install({
+        'c',
+        'cpp',
+        'java',
+        'lua',
+        'javascript',
+        'python',
+        'vim',
+        'yaml',
+        'json',
+        'xml',
+        'rust',
+      })
+    end,
   },
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
