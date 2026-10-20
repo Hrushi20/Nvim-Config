@@ -20,6 +20,7 @@ Personal Neovim setup using `lazy.nvim` with a clean Lua layout.
 - UI: `which-key`, `bufferline.nvim`, `indent-blankline.nvim`
 - Editing: `nvim-autopairs` with `nvim-cmp` integration
 - Project sessions: `persistence.nvim`
+- Pinned project files: Harpoon 2
 
 ## First-Time Setup
 
@@ -36,6 +37,9 @@ Personal Neovim setup using `lazy.nvim` with a clean Lua layout.
 - `<leader>e`: toggle file explorer
 - `<leader>ff`: find files
 - `<leader>fg`: live grep
+- `<leader>pa`: add current file to Harpoon
+- `<leader>pm`: open the Harpoon file list
+- `<leader>p1`–`<leader>p4`: jump to a pinned file
 - `<leader>bb` or `<leader><space>`: switch buffers
 - `<leader>qs`: restore the session for the current project and Git branch
 - `<leader>qS`: choose a saved project session

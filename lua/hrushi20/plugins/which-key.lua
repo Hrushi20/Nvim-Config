@@ -5,6 +5,7 @@ return {
     spec = {
       { "<leader>f", group = "Find" },
       { "<leader>h", group = "Git hunks" },
+      { "<leader>p", group = "Pinned files (Harpoon)" },
       { "<leader>c", group = "Code" },
       { "<leader>x", group = "Diagnostics" },
       { "<leader>q", group = "Project sessions" },
