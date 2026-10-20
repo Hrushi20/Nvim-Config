@@ -6,10 +6,7 @@ return {
     lazy = false,
     build = ":TSUpdate",
     config = function()
-      -- `ensure_installed` was removed from the current main branch API.
-      -- Install these parsers asynchronously when Neovim starts; already
-      -- installed parsers are skipped.
-      require("nvim-treesitter").install({
+      local languages = {
         'c',
         'cpp',
         'java',
@@ -21,6 +18,20 @@ return {
         'json',
         'xml',
         'rust',
+      }
+
+      -- `ensure_installed` was removed from the current main branch API.
+      -- Install these parsers asynchronously when Neovim starts; already
+      -- installed parsers are skipped.
+      require("nvim-treesitter").install(languages)
+
+      -- The current nvim-treesitter main branch provides parser management;
+      -- Neovim's built-in highlighter must be started per buffer.
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = languages,
+        callback = function(event)
+          vim.treesitter.start(event.buf)
+        end,
       })
     end,
   },
