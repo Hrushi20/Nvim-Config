@@ -17,6 +17,9 @@ Personal Neovim setup using `lazy.nvim` with a clean Lua layout.
 - Finder: `telescope.nvim` + `fzf-native`
 - File explorer: `nvim-tree`
 - Syntax/folds: `nvim-treesitter`
+- UI: `which-key`, `bufferline.nvim`, `indent-blankline.nvim`
+- Editing: `nvim-autopairs` with `nvim-cmp` integration
+- Project sessions: `persistence.nvim`
 
 ## First-Time Setup
 
@@ -34,7 +37,13 @@ Personal Neovim setup using `lazy.nvim` with a clean Lua layout.
 - `<leader>ff`: find files
 - `<leader>fg`: live grep
 - `<leader>bb` or `<leader><space>`: switch buffers
+- `<leader>qs`: restore the session for the current project and Git branch
+- `<leader>qS`: choose a saved project session
+- `<leader>ql`: restore the last session
 - `H` / `L`: previous/next buffer
+- Press `Space` and pause to see available leader-key actions
+
+Project sessions save automatically when Neovim exits after opening a file. Start Neovim from the project directory, then use `<leader>qs` to restore that project's session.
 
 ## Notes
 
