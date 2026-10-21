@@ -31,6 +31,7 @@ return {
           vim.keymap.set("n", "gC", function()
             require("telescope.builtin").lsp_references({
               include_declaration = false,
+              jump_type = "never",
             })
           end, {
             buffer = event.buf,
