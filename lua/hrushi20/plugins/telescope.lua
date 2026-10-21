@@ -17,6 +17,13 @@ return {
         desc = 'Find Git Tracked Files (or all files if not a git repo)',
       },
       {'<leader>fb', ':Telescope buffers<CR>', desc = 'Find files in Buffer'},
+      {
+        '<leader>ss',
+        function()
+          require("telescope.builtin").lsp_document_symbols()
+        end,
+        desc = 'Search symbols in current file',
+      },
       {'<leader>fh', ':Telescope help_tags<CR>', desc = 'Help Tags'},
       {'<leader>fF', ':Telescope find_files hidden=true no_ignore=true<CR>', desc = 'Find All Files (incl. hidden)'},
       {'<leader>fr', ':Telescope oldfiles<CR>', desc = 'Recent Files'},

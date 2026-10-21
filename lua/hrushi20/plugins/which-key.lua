@@ -4,6 +4,7 @@ return {
   opts = {
     spec = {
       { "<leader>f", group = "Find" },
+      { "<leader>s", group = "Symbols" },
       { "<leader>t", group = "Toggle" },
       { "<leader>h", group = "Git hunks" },
       { "<leader>p", group = "Pinned files (Harpoon)" },
