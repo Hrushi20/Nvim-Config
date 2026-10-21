@@ -20,6 +20,25 @@ return {
     },
 
     config = function()
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = vim.api.nvim_create_augroup("CppReferenceKeymap", { clear = true }),
+        callback = function(event)
+          local client = vim.lsp.get_client_by_id(event.data.client_id)
+          if not client or client.name ~= "clangd" then
+            return
+          end
+
+          vim.keymap.set("n", "gC", function()
+            require("telescope.builtin").lsp_references({
+              include_declaration = false,
+            })
+          end, {
+            buffer = event.buf,
+            desc = "Find C++ uses of symbol",
+          })
+        end,
+      })
+
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("rust_analyzer")
       vim.lsp.enable("ts_ls")
